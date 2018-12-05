@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -o nounset
-set -o errexit
+
+BASE_DIR=$(dirname "$0")
 
 echo "[aem-helloworld] Executing Custom Stack Provisioner pre-common step..."
 
@@ -21,10 +22,15 @@ translate_puppet_exit_code() {
   return "$exit_code"
 }
 
+set +o errexit
+
 /opt/puppetlabs/bin/puppet apply \
---debug \
---detailed-exitcodes \
---modulepath modules \
---execute "include aem_helloworld::pre_common"
+  --detailed-exitcodes \
+  --modulepath "${BASE_DIR}"/modules \
+  --execute "include aem_helloworld::pre_common"
 
 translate_puppet_exit_code "$?"
+
+set -o errexit
+
+/opt/puppetlabs/puppet/bin/inspec exec "${BASE_DIR}"/test/pre_common.rb

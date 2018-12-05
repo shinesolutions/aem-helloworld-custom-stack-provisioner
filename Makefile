@@ -7,7 +7,7 @@ deps:
 	bundle install --binstubs
 
 clean:
-	rm -rf bin/ stage/ *.lock
+	rm -rf .bundle/ bin/ stage/ *.lock
 
 lint:
 	bundle exec puppet-lint \
@@ -15,16 +15,24 @@ lint:
 		--no-140chars-check \
 		--no-autoloader_layout-check \
 		--no-documentation-check \
-		./modules/aem_helloworld/*.pp
+		./modules/aem_helloworld/manifests/*.pp
+	bundle exec rubocop
+	shellcheck *.sh
 
 package: clean
 	mkdir -p stage
-	zip -r \
-	    -x "*.DS_Store" \
-	    -x "*bin*" \
-	    -x "*stage*" \
-	    -x "*.idea*" \
-	    -x "*.git*" \
-	    -X "stage/aem-helloworld-custom-stack-provisioner-$(version).zip" *
+	tar \
+	  -zcvf stage/aem-helloworld-custom-image-provisioner-$(version).tar.gz \
+    --exclude="*.DS_Store" \
+    --exclude="*bin*" \
+    --exclude="*stage*" \
+    --exclude="*.idea*" \
+    --exclude="*.git*" \
+		--exclude="*.lock*" \
+    --exclude="*.bundle*" \
+    --exclude=".*.yml" \
+		--exclude="Gemfile" \
+		--exclude="Makefile" \
+	  .
 
 .PHONY: ci clean deps lint package

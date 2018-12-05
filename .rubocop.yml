@@ -1,0 +1,7 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - .bundle/*
+    - bin/*
+Metrics/LineLength:
+  Max: 280
