@@ -25,14 +25,14 @@ To create artifact tar.gz file:
 
 The artifact will be written at `stage/aem-helloworld-custom-stack-provisioner-<version>.tar.gz`
 
-Copy the tar.gz artifact file to Packer AEM, please note that the file must be (re)named to `aem-custom-stack-provisioner.tar.gz`:
+Copy the tar.gz artifact file to AEM AWS Stack Builder, please note that the file must be (re)named to `aem-custom-stack-provisioner.tar.gz`:
 
-    cp stage/aem-helloworld-custom-stack-provisioner-<version>.tar.gz <path/to/packer-aem>/stage/custom/aem-custom-stack-provisioner.tar.gz
+    cp stage/aem-helloworld-custom-stack-provisioner-<version>.tar.gz <path/to/aem-aws-stack-builder>/stage/custom/aem-custom-stack-provisioner.tar.gz
 
 If you are using Puppet, the following global facts are available:
 
 | Fact | Description |
 |------|-------------|
-| `::component` | The component name, useful for identifying which image is being provisioned. |
+| `::component` | The component name, useful for identifying which image is being provisioned.
 
 If you need more information from the provisioning process, you can tap into the Hiera data by adding `-hiera_config='/tmp/packer-puppet-masterless/hiera.yaml` flag to your Puppet apply call.
