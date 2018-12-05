@@ -12,10 +12,9 @@ This artifact contains:
 
 Here's an example log output of the post step:
 
-TODO:
 <img src="https://raw.githubusercontent.com/shinesolutions/aem-helloworld-custom-stack-provisioner/master/docs/post-step-log.png" width="800"/>
 
-The use of Puppet and InSpec here is just an example. You can use other tools like Ansible, or even plain shell script if need be. They can be installed either in the pre-common.sh/post-common.sh shell scripts or in [Packer AEM source image](https://github.com/shinesolutions/packer-aem/blob/master/docs/customisation-points.md#source-image).
+The use of Puppet and InSpec here is just an example. You can use other tools like Ansible, or even plain shell script if need be. They can be installed either in [Packer AEM source image](https://github.com/shinesolutions/packer-aem/blob/master/docs/customisation-points.md#source-image) or [Packer AEM custom image provisioner](https://github.com/shinesolutions/packer-aem/blob/master/docs/customisation-points.md#custom-image-provisioner).
 
 ## Usage
 
