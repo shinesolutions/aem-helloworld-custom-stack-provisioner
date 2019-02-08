@@ -22,7 +22,7 @@ lint:
 package: clean
 	mkdir -p stage
 	tar \
-	  -zcvf stage/aem-helloworld-custom-image-provisioner-$(version).tar.gz \
+	  -zcvf stage/aem-helloworld-custom-stack-provisioner-$(version).tar.gz \
     --exclude="*.DS_Store" \
     --exclude="*bin*" \
     --exclude="*stage*" \
