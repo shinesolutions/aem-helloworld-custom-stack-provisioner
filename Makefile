@@ -1,4 +1,4 @@
-version ?= 0.9.1-pre
+version ?= 0.9.1
 
 ci: clean deps lint package
 
