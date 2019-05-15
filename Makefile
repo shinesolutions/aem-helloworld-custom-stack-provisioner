@@ -3,7 +3,7 @@ version ?= 0.9.1-pre
 ci: clean deps lint package
 
 deps:
-	gem install bundler
+	gem install bundler --version=1.17.3
 	bundle install --binstubs
 
 clean:
