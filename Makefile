@@ -35,4 +35,7 @@ package: clean
 		--exclude="Makefile" \
 	  .
 
-.PHONY: ci clean deps lint package
+release:
+	rtk release
+
+.PHONY: ci clean deps lint package release
