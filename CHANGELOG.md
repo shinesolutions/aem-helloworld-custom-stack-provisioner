@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add HOME env var to inspec exec on pre-common.sh as a workaround to latest pry release
+
 ## 0.9.1 - 2019-05-15
 ### Changed
 - Update tests with latest Rubocop

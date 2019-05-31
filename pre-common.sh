@@ -33,4 +33,7 @@ translate_puppet_exit_code "$?"
 
 set -o errexit
 
-/opt/puppetlabs/puppet/bin/inspec exec "${BASE_DIR}"/test/pre_common.rb
+# Specify HOME env var explicitly for inspec here due to intermittent failure
+# when pry gem attempts to resolve its config https://github.com/pry/pry/blob/v0.12.2/lib/pry/pry_class.rb#L5
+# NOTE: their master branch no longer has pry config with home dir tilde expansion
+HOME=/root /opt/puppetlabs/puppet/bin/inspec exec "${BASE_DIR}"/test/pre_common.rb
