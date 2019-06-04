@@ -1,6 +1,5 @@
 .bundle
 bin
 .DS_Store
-Gemfile.lock
 .idea/
 stage/
