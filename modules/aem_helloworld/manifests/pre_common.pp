@@ -14,4 +14,11 @@ class aem_helloworld::pre_common (
     ensure => present,
     mode   => '0664',
   }
+
+  # Only temporary while trialling CIS-benchmarked RHEL7 AMIs on Sandpit
+  # TODO: keep iptables running, configure correct permissions
+  service { 'iptables':
+    ensure => 'stopped',
+  }
+
 }
