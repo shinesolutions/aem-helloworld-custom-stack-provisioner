@@ -20,5 +20,8 @@ class aem_helloworld::pre_common (
   service { 'iptables':
     ensure => 'stopped',
   }
-
+  # TODO: configure auditd to log less aggressive
+  service { 'auditd':
+    ensure => 'stopped',
+  }
 }
