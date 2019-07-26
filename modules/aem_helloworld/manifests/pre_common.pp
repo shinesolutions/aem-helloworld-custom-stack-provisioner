@@ -16,12 +16,16 @@ class aem_helloworld::pre_common (
   }
 
   # Only temporary while trialling CIS-benchmarked RHEL7 AMIs on Sandpit
-  # TODO: keep iptables running, configure correct permissions
-  service { 'iptables':
-    ensure => 'stopped',
-  }
-  # TODO: configure auditd to log less aggressive
-  service { 'auditd':
-    ensure => 'stopped',
+  if $facts['os']['name'] == 'RedHat' {
+    # TODO: keep iptables running, configure correct permissions
+    service { 'iptables':
+      ensure => 'stopped',
+    }
+    # TODO: configure auditd to log less aggressive instead of stopping it
+    # using exec instead of service due to https://antnix07.blogspot.com/2019/03/unable-to-restart-and-stop-auditd.html
+    exec { 'service auditd stop':
+      cwd  => '/tmp',
+      path => ['/usr/bin', '/usr/sbin', '/sbin',],
+    }
   }
 }
