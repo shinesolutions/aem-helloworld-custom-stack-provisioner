@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Disabled iptables so that when instance is restarted, iptables won't run
+
 ## 0.14.0 - 2019-07-26
 ### Changed
 - Restrict iptables and auditd stopping only for RedHat

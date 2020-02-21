@@ -20,6 +20,7 @@ class aem_helloworld::pre_common (
     # TODO: keep iptables running, configure correct permissions
     service { 'iptables':
       ensure => 'stopped',
+      enable => false,
     }
     # TODO: configure auditd to log less aggressive instead of stopping it
     # using exec instead of service due to https://antnix07.blogspot.com/2019/03/unable-to-restart-and-stop-auditd.html
