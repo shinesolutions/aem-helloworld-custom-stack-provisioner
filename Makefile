@@ -35,7 +35,19 @@ package: clean
 		--exclude="Makefile" \
 	  .
 
-release:
-	rtk release
+publish:
+	gh release create $(version) --title $(version) --notes "" || echo "Release $(version) has been created on GitHub"
+	gh release upload $(version) stage/aem-helloworld-custom-stack-provisioner-$(version).tar.gz
 
-.PHONY: ci clean deps lint package release
+release-major:
+	rtk release --release-increment-type major
+
+release-minor:
+	rtk release --release-increment-type minor
+
+release-patch:
+	rtk release --release-increment-type patch
+
+release: release-minor
+
+.PHONY: ci clean deps lint package publish release release-major release-minor release-patch
