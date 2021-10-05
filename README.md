@@ -3,7 +3,7 @@
 
 # AEM Hello World Custom Stack Provisioner
 
-This is an example AEM Hello World Custom Stack Provisioner artifact that will be set up as one of [AEM AWS Stack Builder customisation points](https://github.com/shinesolutions/aem-aws-stack-builder/blob/master/docs/customisation-points.md#custom-stack-provisioner).
+This is an example AEM Hello World Custom Stack Provisioner artifact that will be set up as one of [AEM AWS Stack Builder customisation points](https://github.com/shinesolutions/aem-aws-stack-builder/blob/main/docs/customisation-points.md#custom-stack-provisioner).
 
 This artifact contains:
 * `pre-common.sh` shell script which will be executed before component stack provisioning
@@ -15,7 +15,7 @@ Here's an example log output of the post step:
 
 <img src="https://raw.githubusercontent.com/shinesolutions/aem-helloworld-custom-stack-provisioner/master/docs/post-step-log.png" width="800"/>
 
-The use of Puppet and InSpec here is just an example. You can use other tools like Ansible, or even plain shell script if need be. They can be installed either in [Packer AEM source image](https://github.com/shinesolutions/packer-aem/blob/master/docs/customisation-points.md#source-image) or [Packer AEM custom image provisioner](https://github.com/shinesolutions/packer-aem/blob/master/docs/customisation-points.md#custom-image-provisioner).
+The use of Puppet and InSpec here is just an example. You can use other tools like Ansible, or even plain shell script if need be. They can be installed either in [Packer AEM source image](https://github.com/shinesolutions/packer-aem/blob/main/docs/customisation-points.md#source-image) or [Packer AEM custom image provisioner](https://github.com/shinesolutions/packer-aem/blob/main/docs/customisation-points.md#custom-image-provisioner).
 
 ## Usage
 
