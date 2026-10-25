@@ -1,0 +1,27 @@
+---
+# A stand-in for the AEM AMIs aem-aws-stack-builder launches:
+# Rocky Linux 10 with OpenVox 9 and Cinc InSpec, which the steps run
+HOSTS:
+  rocky-10-x86_64:
+    roles:
+      - default
+    platform: el-10-x86_64
+    image: rockylinux/rockylinux:10
+    hypervisor: docker
+    # Keep the built image so these layers are cached between runs
+    docker_preserve_image: true
+    docker_image_commands:
+      # rockylinux:10 ships without systemd, so /sbin/init has to be
+      # installed
+      - dnf install -y systemd tar gzip
+      # yamllint disable-line rule:line-length
+      - dnf install -y https://yum.voxpupuli.org/openvox9-release-el-10.noarch.rpm
+      - dnf install -y openvox-agent
+      # Cinc InSpec at the version the AMIs provide
+      # yamllint disable-line rule:line-length
+      - curl -fsSL -o /tmp/install.sh https://omnitruck.cinc.sh/install.sh && bash /tmp/install.sh -P cinc-auditor -v 7.2.1 && rm /tmp/install.sh
+    docker_cmd: '["/sbin/init"]'
+    image_outer_ports:
+      - 22
+CONFIG:
+  type: aio
