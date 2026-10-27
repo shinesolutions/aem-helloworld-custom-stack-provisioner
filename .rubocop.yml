@@ -1,7 +1,24 @@
+---
+plugins:
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
+  TargetRubyVersion: '4.0'
   DisplayCopNames: true
+  NewCops: enable
   Exclude:
-    - .bundle/*
+    - .bundle/**/*
     - bin/*
-Metrics/LineLength:
+    - stage/**/*
+    - vendor/**/*
+Layout/LineLength:
   Max: 280
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
+# rspec-puppet and serverspec describe classes and resources by name, as in puppet-aem-orchestrator
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/ContextWording:
+  Enabled: false

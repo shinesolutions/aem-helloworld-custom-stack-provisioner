@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
-gem 'puppet-lint', '2.3.6', require: false
-gem 'rubocop', '0.69.0', require: false
+group :development, :test do
+  # OpenVox 9 calls JSON.parse(string, options), which json 3 no longer accepts
+  gem 'json',                 '~> 2.21'
+  # Provides OpenVox, rspec-puppet, puppet-lint (with the Vox Pupuli plugins) and rubocop
+  gem 'voxpupuli-test',       '~> 15.0', require: false
+  # Runs the acceptance tests in spec/acceptance with Beaker on Docker
+  gem 'voxpupuli-acceptance', '~> 4.4',  require: false
+  # Loaded as a plugin in .rubocop.yml, not a dependency of voxpupuli-test
+  gem 'rubocop-performance',  '~> 1.27', require: false
+end

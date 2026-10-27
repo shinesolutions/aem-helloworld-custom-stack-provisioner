@@ -3,3 +3,7 @@ bin
 .DS_Store
 .idea/
 stage/
+vendor/
+# Beaker logs of the acceptance tests
+/log/
+/junit/
