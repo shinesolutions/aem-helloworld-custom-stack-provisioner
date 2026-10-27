@@ -1,11 +1,10 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 1.0.0 - 2026-10-27
 ### Added
 - Added rspec-puppet catalog tests of the `aem_helloworld` classes, run by `make test`
 - Added acceptance tests with voxpupuli-acceptance (Beaker on Docker), which run `pre-common.sh` and `post-common.sh` from the package as AEM AWS Stack Builder does on Amazon Linux 2023 and Rocky Linux 10 stand-ins for the AEM AMIs, run by `make acceptance`

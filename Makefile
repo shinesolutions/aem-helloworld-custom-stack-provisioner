@@ -1,4 +1,4 @@
-version ?= 0.15.2-pre.0
+version ?= 1.0.0
 
 ci: clean deps lint test package acceptance
 
