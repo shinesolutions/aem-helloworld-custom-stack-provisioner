@@ -45,7 +45,7 @@ If you need more information from the provisioning process, you can tap into the
 
 AEM Hello World Custom Stack Provisioner targets OpenVox 9 and Cinc InSpec 7 on Amazon Linux 2023 and Rocky Linux 10.
 
-Run the commands below in [AEM Platform BuildEnv](https://github.com/shinesolutions/aem-platform-buildenv) (`shinesolutions/aem-platform-buildenv:6.4.1`), as CI does:
+Run the commands below in [AEM Platform BuildEnv](https://github.com/shinesolutions/aem-platform-buildenv) (`shinesolutions/aem-platform-buildenv:6.5.0`), as CI does:
 
 | Command | Runs |
 | --- | --- |
