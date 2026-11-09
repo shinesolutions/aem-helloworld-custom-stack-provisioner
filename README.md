@@ -1,4 +1,5 @@
 [![Build Status](https://github.com/shinesolutions/aem-helloworld-custom-stack-provisioner/workflows/CI/badge.svg)](https://github.com/shinesolutions/aem-helloworld-custom-stack-provisioner/actions?query=workflow%3ACI)
+[![Code Scanning Status](https://github.com/shinesolutions/aem-helloworld-custom-stack-provisioner/workflows/CodeQL/badge.svg)](https://github.com/shinesolutions/aem-helloworld-custom-stack-provisioner/actions?query=workflow%3ACodeQL)
 [![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/aem-helloworld-custom-stack-provisioner/badge.svg)](https://snyk.io/test/github/shinesolutions/aem-helloworld-custom-stack-provisioner)
 
 # AEM Hello World Custom Stack Provisioner
