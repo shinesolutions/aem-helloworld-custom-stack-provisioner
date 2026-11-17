@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Changed
+- Upgrade AEM Platform BuildEnv to 6.6.0
 - Speed up CI: skip CI for release tags, same-repo pull requests and version bump commits, cancel superseded branch runs, and add job timeouts
 - Make the GitHub Actions workflows' GITHUB_TOKEN read-only
 - Fall back to the GWDG mirror of yum.voxpupuli.org for the OpenVox 9 release package and repo in the acceptance nodesets, so an outage of yum.voxpupuli.org does not block CI
